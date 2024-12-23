@@ -14,11 +14,10 @@ Los siguientes conocimientos previos son **necesarios** para la realización de 
 #### Requerimientos computacionales
 Los siguientes requerimientos computacionales son **absolutamente necesarios** para iniciar el taller.
 
-* Dominio básico de la consola `Unix`: Si usted quiere aprender lo básico, le recomendamos este curso de Software Carpentry de tres horas en español: [La Terminal de Unix.](https://swcarpentry.github.io/shell-novice-es/)
+* Dominio básico a intermedio de la consola `Unix`: Si usted quiere aprender lo básico, le recomendamos este curso de Software Carpentry de tres horas en español: [La Terminal de Unix.](https://swcarpentry.github.io/shell-novice-es/)
   
 Previo al inicio del taller, es necesario instalar los siguientes software:
-* Tener instalado OpenFOAM en su computador portátil (se podrán hacer preguntas de instalación directamente en Discord durante los días previos al taller)
-  * OpenFOAM v2306: [Instrucciones de instalación]()
+* Tener instalado OpenFOAM v2306 en su computador portátil
   * Si su OS es Windows, Windows Subsystem for Linux 2 (WSL 2): [Instrucciones de instalación](https://github.com/openfoam-ICL-UC/openfoam_intro_ES/wiki/Instalaci%C3%B3n-de-OpenFOAM)
   * Si su OS es macOS, versión pre-compilada de OpenFOAM en Docker container: [Instrucciones de instalación](https://github.com/openfoam-ICL-UC/openfoam_intro_ES/wiki/Instalaci%C3%B3n-de-OpenFOAM)
   * Si su OS es Linux, no es necesario instalar máquinas virtuales o Docker.
@@ -26,19 +25,24 @@ Previo al inicio del taller, es necesario instalar los siguientes software:
 
 Este taller tiene dos sesiones con dos partes cada una. Los objetivos de aprendizaje de cada parte de este taller son:
 
-#### Sesión 1: Implementación de la solución numérica a un problema de fenómenos de transporte en OpenFOAM
-1. Configurar un caso de OpenFOAM representativo de la transferencia de calor tridimensional no estacionaria en un sistema de flujo de fluidos.
-2. Ejecutar un `solver` de OpenFOAM desde la línea de comando.
-3. Visualizar los resultados de la simulación utilizando paraview.
+#### Sesión 1: Modificación de solver existente para incorporar medio poroso
+1. Configurar y compilar un solver en OpenFOAM personalizado, esto es con configuraciones definida por el usuario.
+2. Modificar dominio geométrico para separarlo en una porción de flujo libre (e.g., flujo en una tubería o canal) y otra de flujo a través de medio poroso.
+3. Incluir archivos `header` adicionales a `solver` personalizado para crear las variables microestructurales representativas de un medio poroso (e.g., porosidad, tortuosidad, permeabilidad)
+4. Modificar la ecuación de conservación de momentum en `solver` personalizado para permitir la resolución de la ecuacion de Brinkman en medio poroso. 
+5. Configurar un caso de OpenFOAM representativo de flujo en medio libre y poroso isotérmico tridimensional no estacionario en un canal cuadrado.
+6. Ejecutar un `solver` personalizado de OpenFOAM desde la línea de comando.
+7. Visualizar los resultados del campo de velocidad de la simulación utilizando ParaView.
 
-#### Sesión 2: Ejemplos y solvers avanzados de OpenFOAM para fenómenos de transporte acoplados
-1. Analizar la implementación de las ecuaciones de conservación de calor, masa y cantidad de movimiento para el solver `icoReactingMultiphaseInterFoam`.
-2. Reproducir un tutorial de OpenFOAM de evaporación de agua en aire, donde la transferencia de calor y masa están acopladas.
-3. Post-procesar un caso multifásico de OpenFOAM.
+#### Sesión 2: Modificación de solver para incorporar sistema reaccionante en medio poroso
+1. 
+2.
+3. 
 
-La documentación asociada a cada sesión puedes encontrarla en [Wikis](https://github.com/openfoam-ICL-UC/openfoam_intro_ES/wiki)
+La documentación asociada a cada sesión puedes encontrarla en [Wikis](https://github.com/openfoam-ICL-UC/openfoam_intermedio_ES/wiki)
 
 ## Autores:
 Catalina Pino Muñoz, Research Associate, Earth Science and Engineering Department, Imperial College London
 
-Felipe Huerta, Profesor, Departamento de Ingeniería Química y Bioprocesos, Pontificia Universidad Católica de Chile
+Felipe Huerta, Profesor Asistente, Departamento de Ingeniería Química y Bioprocesos, Pontificia Universidad Católica de Chile
+
