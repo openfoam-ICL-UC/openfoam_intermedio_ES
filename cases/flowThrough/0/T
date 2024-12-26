@@ -1,0 +1,64 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1906                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      p;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 0 0 1 0 0 0];
+
+internalField   uniform 298.15;
+
+boundaryField
+{
+    // #includeEtc "caseDicts/setConstraintTypes"
+
+    inlet
+    {
+        // Known inlet temperature
+        type              fixedValue;
+        value             uniform 298.15;
+    }
+
+    outlet
+    {
+        // The flow continues with the axial direction
+        type              zeroGradient;
+    }
+
+    top
+    {
+        // Insulated roof wall
+        type              zeroGradient;
+    }
+
+    bottom
+    {
+        // Insulated bottom wall
+        type              zeroGradient;
+    }
+
+    front
+    {
+        // Insulated front wall
+        type              zeroGradient;
+    }
+
+    back
+    {
+        // Insulated back wall
+        type              zeroGradient;
+    }
+
+}
+
+// ************************************************************************* //
