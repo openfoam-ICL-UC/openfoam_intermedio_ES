@@ -47,6 +47,14 @@ autoPtr<incompressible::turbulenceModel> turbulence
 #include "createMRF.H"
 #include "createFvOptions.H"
 
+// Esquema de interpolación de superficie
+multivariateSurfaceInterpolationScheme<scalar>::fieldTable fields;
+
+// Puntero a objeto de la clase CombustionModel
+autoPtr<CombustionModel<psiReactionThermo>> reaction
+(
+    CombustionModel<psiReactionThermo>::New(thermo, turbulence_mass())
+);
 
 // Info<< "Reading kinematic viscosity\n" << endl;
 // volScalarField kinematicViscosity

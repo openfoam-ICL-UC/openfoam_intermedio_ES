@@ -1,13 +1,13 @@
-tmp<fv::convectionScheme<scalar>> mvConvection
-(
-    fv::convectionScheme<scalar>::New
-    (
-        mesh,
-        fields,
-        phi,
-        mesh.divScheme("div(phi,Yi_h)")
-    )
-);
+tmp<fv::convectionScheme<scalar>> icConvection
+ (
+     fv::convectionScheme<scalar>::New
+     (
+         mesh,
+         fields,
+         phi,
+         mesh.divScheme("div(phi,Yi)")
+     )
+ );
 
 {
     reaction->correct();

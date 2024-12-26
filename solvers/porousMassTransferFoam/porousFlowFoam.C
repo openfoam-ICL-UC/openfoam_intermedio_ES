@@ -73,6 +73,9 @@ Description
 #include "pisoControl.H"
 #include "fvOptions.H"
 
+// Modelo de combustión necesario para inicializar el objeto reaction
+#include "CombustionModel.H"
+
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 int main(int argc, char *argv[])
