@@ -113,6 +113,9 @@ int main(int argc, char *argv[])
         {
             #include "UEqn.H"
 
+            // Transferencia de masa
+            #include "YEqn.H"
+
             // --- PISO loop
             while (piso.correct())
             {
