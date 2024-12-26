@@ -1,0 +1,3 @@
+porousFlowFoam.C
+
+EXE = $(FOAM_APPBIN)/porousFlowFoam
