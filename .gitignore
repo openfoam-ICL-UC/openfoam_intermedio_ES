@@ -1,0 +1,71 @@
+# Python and Jupiter notebook folders
+__pycache__/
+notebooks/.ipynb_checkpoints/
+
+# OpenFOAM
+*.foam
+log.*
+processor*
+[0-9]*
+[0-9]*.[0-9]*
+!0.org/
+!0/
+**/constant/polyMesh/
+**/constant/extendedFeatureEdgeMesh/
+
+# LaTeX files
+# LaTeX temporary files
+*.aux
+*.log
+*.toc
+
+# nomenclature
+*.ilg
+*.nlo
+*.nls
+
+#running latex -recorder
+*.fls
+
+# beamer files
+*.bcf
+*.nav
+*.run.xml
+*.snm
+
+#Latexmk
+*.fdb_latexmk
+
+# SyncTeX
+*.synctex.gz
+
+#LaTeX Beamer
+*.out
+
+#BibTeX
+*.bbl
+*.blg
+*Notes.bib
+
+# Mac IDE files
+*.swp
+*~
+*(Autosaved).rtfd/
+Backup[ ]of[ ]*.pages/
+Backup[ ]of[ ]*.key/
+Backup[ ]of[ ]*.numbers/
+
+# Mac finder files and hidden folders
+.DS_Store
+
+# VScode 
+.vscode
+
+# Paraview
+*.pvsm
+
+
+# Compiler
+*.dep
+*.o
+**/Make/linux*
