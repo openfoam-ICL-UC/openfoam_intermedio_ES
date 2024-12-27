@@ -1,0 +1,58 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1906                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      fvOptions;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+/* Commenting this section sas now micrstructure properties are given in microstructure properties dictionary */
+// porosity1
+// {
+//     type            explicitPorositySource;
+
+//     explicitPorositySourceCoeffs
+//     {
+//         selectionMode   cellZone;
+
+//         cellZone        porousBlockage;
+
+//         type            DarcyForchheimer;
+
+//         // Darcy parameter D = 1/k, electrode permeability: k 1e-12 - 1e-10
+//         // D 100;  // Very little blockage
+//         // D 200;  // Some blockage but steady flow
+//         // D 500;  // Slight waviness in the far wake
+//         D 2.0e11; //3.703e5; // Fully shedding behavior 
+
+
+// 	    // Forchheimer parameter, F, is F =2*beta = 2*Ce/sqrt(k), beta: forchheimer coefficient, Ce: Ergun coefficient
+//         beta 3.2e4;
+//         F 6.4e4;
+
+//         d   ($D $D $D);
+//         f   ($F $F $F);
+
+//         coordinateSystem
+//         {
+//             origin  (0.0005 0.0005 0.00105);
+
+//             rotation
+//             {
+//                 type    none;
+//             }
+//         }
+//     }
+// }
+
+
+// ************************************************************************* //
