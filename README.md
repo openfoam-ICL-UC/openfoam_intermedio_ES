@@ -34,6 +34,8 @@ Este taller tiene dos sesiones con dos partes cada una. Los objetivos de aprendi
 6. Ejecutar un `solver` personalizado de OpenFOAM desde la línea de comando.
 7. Visualizar los resultados del campo de velocidad de la simulación utilizando ParaView.
 
+[Tutorial sesión 1 crear un nuevo solver](https://www.dropbox.com/scl/fi/vdsitmdmes5hwwwa8ezkg/s1.1_porous_flow.pdf?rlkey=oatl6e49l5rh5fit2p97bnvqn&st=srjfne1n&dl=0)
+
 #### Sesión 2: Modificación de solver para incorporar sistema reaccionante en medio poroso
 Objetivos de aprendizaje
 
