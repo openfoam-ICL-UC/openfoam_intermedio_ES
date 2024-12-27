@@ -35,9 +35,12 @@ Este taller tiene dos sesiones con dos partes cada una. Los objetivos de aprendi
 7. Visualizar los resultados del campo de velocidad de la simulación utilizando ParaView.
 
 #### Sesión 2: Modificación de solver para incorporar sistema reaccionante en medio poroso
-1. 
-2.
-3. 
+Objetivos de aprendizaje
+
+1. Modificar un solver existente a partir de otro solver de OPenFOAM para agregar ecuación de conservación de especies
+2. Resolver errores de compilación y vinculación de C++ en el proceso de la adaptación del solver.
+3. Identificar los tipos de objetos que aparecen regularmente en códigos de fuente de _solvers_ de OpenFOAM.
+
 Descargue el PDF de la sesión 2 aquí: [Tutorial sesión 2 Rx medio poroso](https://www.dropbox.com/scl/fi/fdw9k5vxatfwezrmpivdq/s1.2_species_rx-1.pdf?rlkey=v0dzbaqi2dfdjxd0g5rqdzj72&st=8q8dxy4e&dl=0)
 
 La documentación asociada a cada sesión puedes encontrarla en [Wikis](https://github.com/openfoam-ICL-UC/openfoam_intermedio_ES/wiki)
