@@ -5,18 +5,18 @@
 |   \\  /    A nd           | Website:  www.openfoam.com                      |
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
-FoamFile
-{
-    version     2.0;
-    format      ascii;
-    class       dictionary;
-    object      transportProperties;
+FoamFile {
+    version 2.0;
+    format ascii;
+    class dictionary;
+    object transportProperties;
 }
+
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-transportModel  Newtonian;
+transportModel Newtonian;
 
-nu              5e-3; // Re_blockage = 200
+nu 3.7e-6; //typical value for electrolyte V4/V5 
 
 
 // ************************************************************************* //

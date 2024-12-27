@@ -5,49 +5,48 @@
 |   \\  /    A nd           | Website:  www.openfoam.com                      |
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
-FoamFile
-{
-    version     2.0;
-    format      ascii;
-    class       dictionary;
-    object      controlDict;
+FoamFile {
+    version 2.0;
+    format ascii;
+    class dictionary;
+    object controlDict;
 }
+
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-application     porousFlowFoam_s1;
+application porousFlowFoam_s1;
 
-startFrom       latestTime;//startTime;
+startFrom latestTime; //startTime;
 
-startTime       0;
+startTime 0;
 
-stopAt          endTime;
+stopAt endTime;
 
-endTime         1e-1;
+endTime 1e-2;
 
-deltaT          1e-6;
+deltaT 1e-6;
 
-writeControl    adjustable;//runTime;
+writeControl adjustable; //runTime;
 
-writeInterval   5e-4;
+writeInterval 5e-4;
 
-purgeWrite      0;
+purgeWrite 0;
 
-writeFormat     ascii;
+writeFormat ascii;
 
-writePrecision  6;
+writePrecision 6;
 
 writeCompression off;
+S timeFormat general;
 
-timeFormat      general;
-
-timePrecision   6;
+timePrecision 6;
 
 runTimeModifiable true;
 
-adjustTimeStep	yes;
+adjustTimeStep yes;
 
-maxDeltaT       1e-4;
+maxDeltaT 1e-4;
 
-maxCo           0.9;
+maxCo 0.9;
 
 // ************************************************************************* //
