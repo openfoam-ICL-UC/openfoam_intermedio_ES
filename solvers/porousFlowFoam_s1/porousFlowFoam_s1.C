@@ -90,6 +90,7 @@ int main(int argc, char *argv[])
     #include "createTime.H"
     #include "createMesh.H"
     #include "createControl.H"
+    #include "createPorousMedia.H" // add for porous media
     #include "createFields.H"
     #include "initContinuityErrs.H"
 
