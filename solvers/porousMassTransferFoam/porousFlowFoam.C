@@ -95,6 +95,7 @@ int main(int argc, char *argv[])
     #include "createControl.H"
     #include "createPorousMedia.H" // add for porous media
     #include "createFields.H"
+    #include "createFieldRefs.H"
     #include "initContinuityErrs.H"
     #include "CourantNo.H" // add for adjustTimeStep
     #include "createTimeControls.H"// add for adjustTimeStep

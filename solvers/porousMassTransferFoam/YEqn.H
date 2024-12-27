@@ -23,7 +23,7 @@ tmp<fv::convectionScheme<scalar>> icConvection
             fvScalarMatrix YiEqn
             (
                 fvm::ddt(rho, Yi)
-              + mvConvection->fvmDiv(phi, Yi)
+              + icConvection->fvmDiv(phi, Yi)
               - fvm::laplacian(turbulence->muEff(), Yi)
              ==
                 reaction->R(Yi)

@@ -1,3 +1,19 @@
+// Crea lista de punteros de fracciones másicas
+autoPtr<psiReactionThermo> pThermo(psiReactionThermo::New(mesh)); 
+psiReactionThermo& thermo = pThermo(); 
+thermo.validate(args.executable(), "h", "e"); 
+basicSpecieMixture& composition = thermo.composition(); 
+PtrList<volScalarField>& Y = composition.Y(); 
+
+// Crea word inertSpecie utilizada en createFieldsRefs.H
+const word inertSpecie(thermo.get<word>("inertSpecie"));
+if (!composition.species().found(inertSpecie))
+{
+    FatalIOErrorIn(args.executable().c_str(), thermo)
+        << "Inert specie " << inertSpecie << " not found in available species "
+        << composition.species() << exit(FatalIOError);
+}
+
 Info<< "Reading field p\n" << endl;
 volScalarField p
 (
@@ -26,8 +42,7 @@ volVectorField U
     mesh
 );
 
-autoPtr<psiReactionThermo> pThermo(psiReactionThermo::New(mesh)); 
-psiReactionThermo& thermo = pThermo(); 
+
 
 #include "createPhi.H"
 

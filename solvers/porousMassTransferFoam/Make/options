@@ -22,3 +22,12 @@ EXE_LIBS = \
     -lturbulenceModels \
     -lincompressibleTurbulenceModels \
     -lincompressibleTransportModels \
+    -lcompressibleTurbulenceModels \
+    -lthermoTools \
+    -lreactionThermophysicalModels \
+    -lspecie \
+    -lcompressibleTransportModels \
+    -lfluidThermophysicalModels \
+    -lchemistryModel \
+    -lODE \
+    -lcombustionModels
