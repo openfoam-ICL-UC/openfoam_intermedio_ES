@@ -28,6 +28,9 @@ volScalarField p
     mesh
 );
 
+// Crea R Delta T
+#include "createRDeltaT.H"
+
 Info<< "Reading field U \n" << endl;
 volVectorField U
 (
@@ -92,6 +95,16 @@ autoPtr<compressible::turbulenceModel> turbulence_mass
 // Esquema de interpolación de superficie
 multivariateSurfaceInterpolationScheme<scalar>::fieldTable fields;
 
+// Agrega los campos de fracción másica y entalpía al esquema
+// de interpolación
+
+forAll(Y, i)
+{
+    fields.add(Y[i]);
+}
+
+fields.add(thermo.he());
+
 // Puntero a objeto de la clase CombustionModel
 autoPtr<CombustionModel<psiReactionThermo>> reaction
 (
@@ -112,19 +125,11 @@ volScalarField Qdot
     dimensionedScalar(dimEnergy/dimVolume/dimTime, Zero)
 );
 
-// Info<< "Reading kinematic viscosity\n" << endl;
-// volScalarField kinematicViscosity
-// (
-//     IOobject
-//     (
-// 	"kinematicViscosity",
-// 	runTime.timeName(),
-// 	mesh,
-//     IOobject::NO_READ,
-// 	IOobject::AUTO_WRITE // NO_WRITE
-//     ),
-//     mesh,
-//     dimensionedScalar("kinematicViscosity",dimViscosity,nu.value())
-//     // dimensionedScalar("kinematicViscosity",dimViscosity,1.0)
-// );
- 
+// Densidad dimensional
+dimensionedScalar rho_dim = dimensionedScalar("rho_dim", dimensionSet(1, -3, 0, 0, 0, 0, 0), 1);
+
+// Número de Schmidt turbulento
+dimensionedScalar Sct("Sct", dimless, laminarTransport);
+
+// Difusividad molecular
+dimensionedScalar D("D", dimensionSet(0, 2, -1, 0, 0, 0), laminarTransport);
