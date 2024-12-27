@@ -75,6 +75,7 @@ Description
 
 // Modelo de combustión necesario para inicializar el objeto reaction
 #include "CombustionModel.H"
+#include "psiReactionThermo.H" 
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -98,7 +99,7 @@ int main(int argc, char *argv[])
     #include "CourantNo.H" // add for adjustTimeStep
     #include "createTimeControls.H"// add for adjustTimeStep
     #include "setInitialDeltaT.H"// add for adjustTimeStep
-  
+   
     turbulence->validate();
 
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

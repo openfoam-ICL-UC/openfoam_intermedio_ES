@@ -26,6 +26,9 @@ volVectorField U
     mesh
 );
 
+autoPtr<psiReactionThermo> pThermo(psiReactionThermo::New(mesh)); 
+psiReactionThermo& thermo = pThermo(); 
+
 #include "createPhi.H"
 
 label pRefCell = 0;
@@ -43,6 +46,30 @@ autoPtr<incompressible::turbulenceModel> turbulence
     incompressible::turbulenceModel::New(U, phi, laminarTransport)
 );
 
+volScalarField rho
+(
+    IOobject
+    (
+        "rho",
+        runTime.timeName(),
+        mesh
+    ),
+    thermo.rho()
+);
+
+Info << "Creando modelo de turbulencia para transferencia de masa\n" << nl;
+autoPtr<compressible::turbulenceModel> turbulence_mass
+(
+    compressible::turbulenceModel::New
+    (
+        rho,
+        U,
+        phi,
+        thermo
+    )
+);
+
+
 
 #include "createMRF.H"
 #include "createFvOptions.H"
@@ -54,6 +81,20 @@ multivariateSurfaceInterpolationScheme<scalar>::fieldTable fields;
 autoPtr<CombustionModel<psiReactionThermo>> reaction
 (
     CombustionModel<psiReactionThermo>::New(thermo, turbulence_mass())
+);
+
+volScalarField Qdot
+(
+    IOobject
+    (
+        "Qdot",
+        runTime.timeName(),
+        mesh,
+        IOobject::READ_IF_PRESENT,
+        IOobject::AUTO_WRITE
+    ),
+    mesh,
+    dimensionedScalar(dimEnergy/dimVolume/dimTime, Zero)
 );
 
 // Info<< "Reading kinematic viscosity\n" << endl;
