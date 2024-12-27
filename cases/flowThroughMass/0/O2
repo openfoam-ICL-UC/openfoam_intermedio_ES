@@ -1,0 +1,65 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2006                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      O2;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 0 0 0 0 0 0];
+
+internalField   uniform 0;
+
+boundaryField
+{
+    outlet
+    {
+        // No nitrogen at the outlet
+        type            inletOutlet;
+        inletValue      $internalField;
+        value           $internalField;
+    }
+
+    inlet
+    {
+        // Pure oxygen at the inlet (pure nitrogen)        
+        type            fixedValue;
+        value           uniform 1.0;
+    }
+
+    top
+    {
+        // Impermeable boundary
+        type              zeroGradient;
+    }
+
+    bottom
+    {
+        // Impermeable boundary
+        type              zeroGradient;
+    }
+
+    front
+    {
+        // Impermeable boundary
+        type              zeroGradient;
+    }
+
+    back
+    {
+        // Impermeable boundary
+        type              zeroGradient;
+    }
+}
+
+
+// ************************************************************************* //

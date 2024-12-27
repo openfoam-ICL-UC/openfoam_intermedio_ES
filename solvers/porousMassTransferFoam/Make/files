@@ -1,0 +1,3 @@
+porousMassTransferFoam.C
+
+EXE = $(FOAM_APPBIN)/porousMassTransferFoam

@@ -1,0 +1,27 @@
+// Case-setup corresponding to choked-nozzle
+
+species
+(
+N2
+O2
+);
+
+elements
+(
+N
+O
+);
+
+reactions
+{
+    // Rx irrealista pero sirve para probar el solver
+    oxygenToNitrogen
+    {
+        type        irreversibleArrheniusReaction;
+        reaction    "O2 = N2";
+        A           1e-3; // Base Rx rate, corresponding to a steady state conversion of 0.4%
+        beta        0;
+        Ta          0;
+    }
+
+}

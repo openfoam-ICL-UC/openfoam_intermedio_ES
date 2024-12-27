@@ -1,0 +1,28 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1906                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      transportProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+transportModel  Newtonian;
+
+// V4/V5 electrolyte kinematic viscosity, typical values (mu 0.005 Pa s, rho 1350 kg m^-3)
+nu              3.7e-6; 
+
+// Diffusivity of binary pair
+D               1.569e-5; // m^2/s        
+
+// Turbulent Schmidt number
+Sct             0.85;
+// ************************************************************************* //
