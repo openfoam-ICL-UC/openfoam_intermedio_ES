@@ -146,6 +146,21 @@ volScalarField forchheimerCoeff
     dimensionedScalar("forchheimerCoeff",dimless/dimLength,1.0)
 );
 
+Info<< "Calculating effectiveness factor (1 in channel, Feff in porous media)\n" << endl;
+volScalarField Feff
+(
+     IOobject
+     (
+	"Feff",
+	runTime.timeName(),
+	mesh,
+    IOobject::NO_READ,
+	IOobject::AUTO_WRITE // NO_WRITE
+     ),
+     mesh,
+     dimensionedScalar("Feff",dimless,1.0)
+);
+
 // Assigning values in porous media domain defined in toposetDict 
 forAll(porousCells,i)
 {
