@@ -38,6 +38,7 @@ Este taller tiene dos sesiones con dos partes cada una. Los objetivos de aprendi
 1. 
 2.
 3. 
+Descargue el PDF de la sesión 2 aquí: [Tutorial sesión 2 Rx medio poroso](https://www.dropbox.com/scl/fi/fdw9k5vxatfwezrmpivdq/s1.2_species_rx-1.pdf?rlkey=v0dzbaqi2dfdjxd0g5rqdzj72&st=8q8dxy4e&dl=0)
 
 La documentación asociada a cada sesión puedes encontrarla en [Wikis](https://github.com/openfoam-ICL-UC/openfoam_intermedio_ES/wiki)
 
