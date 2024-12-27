@@ -1,0 +1,34 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2306                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      microstructureProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Porosity
+eps		    eps [0 0 0 0 0 0 0] 0.85; // isotropic electrode porosity, typical value range for carbon paper (0.8-0.95)
+
+// Tortuosity - estimated from porosity of use value if known
+tau		    tau [0 0 0 0 0 0 0] 0.0; // if not know leave as 0 and formula will be used
+
+// Permeability - can be calculated using Carman-Kozeny correlation or use value if known, typical value carbon paper (2.0e-11 m2)
+kappa		kappa [0 2 0 0 0 0 0] 0.0;// if not know leave as 0 and formula will be used
+
+// Mean fibre diameter, use to calculate permeability if not given. Typical mean fibre diameter, 8 um
+df          df [0 1 0 0 0 0 0] 8.0e-6;
+
+// Carman Kozeny coefficient, use to calculate permeability if not given.
+kCK         kCK [0 0 0 0 0 0 0] 4.28;
+
+// Forchheimer parameter, F, is F =2*beta = 2*Ce/sqrt(k), beta: forchheimer coefficient, Ce: Ergun coefficient
+beta        beta [0 -1 0 0 0 0 0] 3.2e4;
+// ************************************************************************* //
